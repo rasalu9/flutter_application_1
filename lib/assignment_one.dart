@@ -1,4 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_application_1/second_assignment.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class AssignmentOne extends StatefulWidget {
   const AssignmentOne({super.key});
@@ -13,10 +17,8 @@ class _AssignmentOneState extends State<AssignmentOne> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey,
-    
       appBar: AppBar(
         elevation: 0,
-      
         title: const Text("Stawberry"),
         actions: [
           GestureDetector(
@@ -40,7 +42,7 @@ class _AssignmentOneState extends State<AssignmentOne> {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     fontFamily: "assets/fonts/Roboto-Black.ttf",
-                   color: Colors.deepPurple,
+                    color: Colors.deepPurple,
                     fontSize: 14,
                     letterSpacing: 2,
                     wordSpacing: 2,
@@ -61,25 +63,37 @@ class _AssignmentOneState extends State<AssignmentOne> {
                 )
               ],
             ),
-           Padding(
-              padding: EdgeInsets.symmetric(vertical: 10),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
-                
                 children: [
-                  
-                   const Column(
-                    children: [
-                      Icon(Icons.restaurant),
-                      Text("Prep:"),
-                      Text("25 mins"),
-                   
-                    ],
-              ),
-                  
                   Column(
                     children: [
-                      const Icon(Icons.timer),
+                      Icon(Icons.stars),
+                      Text("PrepI:"),
+                      Text("25 mins"),
+                    ],
+                  )
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Column(
+                    children: [
+                      GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        const SecondAssignment()));
+                          },
+                          child: const Icon(Icons.timer)),
                       const Text("Cook"),
                       Text("$cookTime Hour")
                     ],
@@ -99,6 +113,6 @@ class _AssignmentOneState extends State<AssignmentOne> {
   // commonRowWidget(Icon icon, String firstText, String secondText) {
   //   return Column(
   //     children: [icon, Text(firstText), Text(secondText)],
-    // );
-  }
+  // );
+}
 // }
