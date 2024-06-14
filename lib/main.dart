@@ -5,8 +5,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_application_1/abc.dart';
+
 import 'package:flutter_application_1/assignment_one.dart';
+import 'package:flutter_application_1/assignment_third.dart';
+import 'package:flutter_application_1/assignment_fourth.dart';
+
 // import 'package:flutter_application_1/assignment_one.dart';
 import 'package:flutter_application_1/second_assignment.dart';
 // import 'package:flutter/widgets.dart';
@@ -28,7 +31,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const SecondAssignment());
+        home: ScreenPage());
   }
 }
 
@@ -88,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ],
                       ),
                       Padding(
-                          padding: EdgeInsets.symmetric(
+                          padding: const EdgeInsets.symmetric(
                               horizontal: 200, vertical: 10),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -101,7 +104,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                           builder: (context) =>
                                               const AssignmentOne()));
                                 },
-                                child: Icon(Icons.bus_alert, size: 100.00),
+                                child:
+                                    const Icon(Icons.bus_alert, size: 100.00),
                               )
                             ],
                           ))
